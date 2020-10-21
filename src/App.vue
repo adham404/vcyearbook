@@ -1,26 +1,54 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <div class="Desktop">
+      <Desktop/>
+
+    </div>
+    <div class="Mobile">
+      <Mobile/>
+    </div>
+    
+  </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Mobile from '@/views/Mobile.vue'
+import Desktop from '@/views/Desktop.vue'
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    Mobile,
+    Desktop
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+#app{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../src/assets/backgroundImage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 1);
+  }
+@font-face {
+  font-family: "Perpetua";
+  src: local("Perpetua"),
+   url("../src/assets/Perpetua.TTF") format("truetype");
+}
+  
+  @media only screen and (max-width: 930px) {
+  .Desktop{
+    display: none;
+  }
+  .Mobile{
+    display: block;
+  }
+}
+@media only screen and (min-width: 920px) {
+  .Desktop{
+    display: block;
+  }
+  .Mobile{
+    display: none;
+  }
 }
 </style>
