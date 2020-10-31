@@ -28,6 +28,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: rgba(0, 0, 0, 1);
+  overflow-y: hidden;
   }
 @font-face {
   font-family: "Perpetua";
